@@ -1,7 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-
+import contentReducer from '../components/Main/contentSlice'
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    main: contentReducer,
+  },
 })
 
 export default store
