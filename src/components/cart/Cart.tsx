@@ -8,6 +8,7 @@ import IconDelete from '../../assets/images/icon-delete.svg'
 const Cart = () => {
   const cart = useAppSelector((state) => state.cart)
   const orders = Array.from(Object.keys(cart))
+  console.log(orders)
   const dispatch = useAppDispatch()
   const totalCartQty = useAppSelector((state) => state.main.totalCartQty)
 

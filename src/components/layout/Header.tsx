@@ -24,7 +24,7 @@ const Header = () => {
   const [showMobileNav, setShowMobileNav] = useState(false)
   const [showCart, setShowCart] = useState(false)
 
-  // const totalCartQty = useAppSelector((state) => state.main.totalCartQty)
+  const totalCartQty = useAppSelector((state) => state.main.totalCartQty)
 
   return (
     <>
@@ -71,11 +71,13 @@ const Header = () => {
               alt='cart Logo'
               onClick={() => setShowCart(!showCart)}
             />
-            {/* {totalCartQty && orders.length ? (
+
+            {/* showing the totalquantity at the cartIcon */}
+            {totalCartQty && orders.length ? (
               <span className='absolute left-[1.1rem] top-[-1rem] w-8 h-[1.4rem] bg-orange-500 text-orange-100 rounded-[0.5rem] font-bold text-center text-[1.1rem]'>
                 {totalCartQty}
               </span>
-            ) : null} */}
+            ) : null}
           </span>
           <span className='h-[4rem] w-12 hover:scale-150 cursor-pointer'>
             <img src={profilePic} alt='Profile pics' />
