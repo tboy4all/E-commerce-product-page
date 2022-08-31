@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 // import { NavLink } from 'react-router-dom'
+import { useAppSelector } from '../../app/hooks'
 import {
   AiOutlineClose,
   AiOutlineMenu,
@@ -11,11 +12,20 @@ import {
   MdOutlineContactPage,
 } from 'react-icons/md'
 import logo from '../../assets/images/logo.svg'
-import cart from '../../assets/images/icon-cart.svg'
+import cartIcon from '../../assets/images/icon-cart.svg'
 import profilePic from '../../assets/images/image-avatar.png'
+import Cart from '../cart/Cart'
 
 const Header = () => {
+  const cart = useAppSelector((state) => state.cart)
+  console.log(cart)
+  const orders = Array.from(Object.keys(cart))
+  console.log(orders)
   const [showMobileNav, setShowMobileNav] = useState(false)
+  const [showCart, setShowCart] = useState(false)
+
+  // const totalCartQty = useAppSelector((state) => state.main.totalCartQty)
+
   return (
     <>
       <nav className='relative h-32 flex justify-between mx-20 p-10 md:border-b-2'>
@@ -56,13 +66,24 @@ const Header = () => {
         <div className='flex ml-10 pt-2 gap-8'>
           {/* Right Nav */}
           <span className='relative h-full pt-2 cursor-pointer'>
-            <img src={cart} alt='cart Logo' />
+            <img
+              src={cartIcon}
+              alt='cart Logo'
+              onClick={() => setShowCart(!showCart)}
+            />
+            {/* {totalCartQty && orders.length ? (
+              <span className='absolute left-[1.1rem] top-[-1rem] w-8 h-[1.4rem] bg-orange-500 text-orange-100 rounded-[0.5rem] font-bold text-center text-[1.1rem]'>
+                {totalCartQty}
+              </span>
+            ) : null} */}
           </span>
           <span className='h-[4rem] w-12 hover:scale-150 cursor-pointer'>
             <img src={profilePic} alt='Profile pics' />
           </span>
         </div>
       </nav>
+
+      {showCart ? <Cart /> : null}
 
       {/* Overlay / backdrops*/}
       {showMobileNav ? (

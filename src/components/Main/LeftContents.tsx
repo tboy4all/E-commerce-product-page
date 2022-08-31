@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { togglePictureIndex } from './contentSlice'
-import productImg1 from '../../assets/images/image-product-1.jpg'
+// import productImg1 from '../../assets/images/image-product-1.jpg'
 import productImgth from '../../assets/images/image-product-1-thumbnail.jpg'
 import productImg2 from '../../assets/images/image-product-2-thumbnail.jpg'
 import productImg3 from '../../assets/images/image-product-3-thumbnail.jpg'
