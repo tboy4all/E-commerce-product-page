@@ -16,14 +16,14 @@ const ProductDetails = () => {
 
   const qtyOrdered = useAppSelector((state) => state.main.qtyOrder)
 
+  const itemName = itemNameRef.current && itemNameRef.current.textContent
+  const itemPrice = itemPriceRef.current && itemPriceRef.current.textContent
+  const imgSrc = cartImg
+
   type addItemPayloadType = {
     key: string | null
     data: CartItem
   }
-
-  const itemName = itemNameRef.current && itemNameRef.current.textContent
-  const itemPrice = itemPriceRef.current && itemPriceRef.current.textContent
-  const imgSrc = cartImg
 
   const addItemPayload: addItemPayloadType = {
     key: itemName,
@@ -35,8 +35,8 @@ const ProductDetails = () => {
   }
 
   const qtyOrder = useAppSelector((state) => state.main.qtyOrder)
-  const dispatch = useAppDispatch()
   const cart = useAppSelector((state) => state.cart)
+  const dispatch = useAppDispatch()
 
   const totalQty = Object.values(cart).reduce(
     (acc: number, next: CartItem): number => {

@@ -32,10 +32,10 @@ const Cart = () => {
                 <div className='rounded-[.4rem]'>
                   <p className='w-full'>{item}</p>
                   <p>
-                    {cart[item].markedPrice} X {cart[item].qtyOrdered} =
+                    {cart[item].markedPrice} X {cart[item].qtyOrdered} = &nbsp;
                     <span className='font-extrabold'>
                       $
-                      {Number(cart[item].markedPrice?.slice(1)) *
+                      {Number(cart[item].markedPrice?.substring(1)) *
                         cart[item].qtyOrdered}
                       .00
                     </span>
