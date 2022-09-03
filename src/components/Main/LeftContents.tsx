@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { togglePictureIndex } from './contentSlice'
 import LightBox from './LightBox'
