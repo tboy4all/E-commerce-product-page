@@ -13,7 +13,7 @@ const Cart = () => {
   const totalCartQty = useAppSelector((state) => state.main.totalCartQty)
 
   return (
-    <div className='overflow-y-auto absolute z-50 flex flex-col items-center gap-8 shadow-xl rounded-b-2xl pb-6 bg-white md:right-28 top-28 w-[350px] min-h-[33rem] sm:min-h-[20rem] sm:w-[30rem] '>
+    <div className=' absolute z-50 flex flex-col items-center gap-8 shadow-xl rounded-b-2xl pb-6 bg-white md:right-28 top-28 w-[350px] min-h-[33rem] sm:min-h-[20rem] sm:w-[30rem] '>
       <div className='border-b-2 border-gray-200 items-center w-full'>
         <h3 className='pt-5 font-bold text-2xl text-gray-700 h-20 px-5'>
           Cart

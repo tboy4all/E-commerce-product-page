@@ -99,7 +99,8 @@ const ProductDetails = () => {
           className='flex gap-3 text-gray-50 bg-orange-500 font-bold border-none text-2xl w-[35rem] rounded-[1rem] sm:w-[20rem] px-4 py-6 sm:py-4 h-20 sm:h-16 justify-center cursor-pointer hover:bg-orange-400'
           onClick={() => {
             dispatch(addToCart(addItemPayload))
-            dispatch(updateTotalCartQty(qtyOrder))
+            // dispatch(updateTotalCartQty(qtyOrder))
+            dispatch(updateTotalCartQty(totalQty))
           }}
         >
           <AiOutlineShoppingCart size={20} />

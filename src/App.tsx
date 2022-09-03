@@ -5,7 +5,7 @@ import Contents from './components/Main/Contents'
 
 function App() {
   return (
-    <div>
+    <div className='overflow-y-auto'>
       <Header />
       <Contents />
     </div>
